@@ -1,3 +1,13 @@
+--[[--------------------------------------------------------------------
+	Zone Achievement Tracker
+	Automatically tracks the achievement for completing
+	a certain number of quests in your current zone.
+	Written by Phanx <addons@phanx.net>
+	Copyright © 2012 Phanx. Some rights reserved. See LICENSE.txt for details.
+	http://www.wowinterface.com/downloads/info20975-ZoneAchievementTracker.html
+	http://www.curse.com/addons/wow/zoneachievementtracker
+----------------------------------------------------------------------]]
+
 local zoneAchievements = {
 	[16]  = 4896,  -- Arathi Highlands
 	[17]  = 4900,  -- Badlands
@@ -107,7 +117,7 @@ f:SetScript("OnEvent", function()
 	if not zone then return end
 
 	local achievement = zoneAchievements[zone]
-	
+
 	-- print("|cffff6666ZAT:|r", "zone:", zone, "achivement:", achievement)
 
 	local tracked

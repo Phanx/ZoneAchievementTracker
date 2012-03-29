@@ -9,8 +9,8 @@
 ## X-Copyright: Copyright © 2012 Phanx
 ## X-License: Some rights reserved. See LICENSE.txt for details.
 ## X-CompatibleLocales: enUS, deDE, esES, esMX, frFR, koKR, ptBR, ruRU, zhCN, zhTW
-## X-Website: http://www.wowinterface.com/downloads/info-ZoneAchievementTracker.html
+## X-Website: http://www.wowinterface.com/downloads/info20975-ZoneAchievementTracker.html
 ## X-Curse-Project-ID: zoneachievementtracker
-## X-WoWI-ID: 
+## X-WoWI-ID: 20975
 
 ZoneAchievementTracker.lua

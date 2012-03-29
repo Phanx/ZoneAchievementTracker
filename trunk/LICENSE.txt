@@ -1,6 +1,6 @@
 ZoneAchievementTracker
 Written by Phanx <addons@phanx.net>
-http://www.wowinterface.com/downloads/info-ZoneAchievementTracker.html
+http://www.wowinterface.com/downloads/info20975-ZoneAchievementTracker.html
 http://www.curse.com/addons/wow/zoneachievementtracker
 
 Copyright © 2012 Phanx <addons@phanx.net>

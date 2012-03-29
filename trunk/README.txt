@@ -3,15 +3,18 @@ Zone Achievement Tracker
 
 * Written by Phanx <addons@phanx.net>
 * Copyright © 2012 Phanx. Some rights reserved. See LICENSE.txt for details.
-* http://www.wowinterface.com/downloads/info.html
+* http://www.wowinterface.com/downloads/info20975-ZoneAchievementTracker.html
 * http://www.curse.com/addons/wow/zoneachievementtracker
 
 
 Description
 -----------
 
-Zone Achievement Tracker automatically tracks the achievement for 
+Zone Achievement Tracker automatically tracks the achievement for
 completing a certain number of quests in your current zone.
+
+Achievements you have already completed will not be tracked.
+Achievements for other zones will be un-tracked.
 
 There are no options.
 
