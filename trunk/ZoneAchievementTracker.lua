@@ -118,8 +118,8 @@ f:SetScript("OnEvent", function(self, event)
 	if not zoneID then return end
 
 	local achievementID = AchievementForZone[zoneID]
-	local _, achievementName = GetAchievementInfo(achievementID)
-	if not achievementName then
+	local _, achievementName = GetAchievementInfo(achievementID or -1)
+	if achievementID and not achievementName then
 		print("|cffff6666[ERROR] Zone Achievement Tracker:|r")
 		print(string.format(">> Bad achievement ID %d for %s in zone %d %s.", achievementID, self.factionName, zoneID, GetRealZoneText()))
 		print("Please report this error so it can be fixed!")
