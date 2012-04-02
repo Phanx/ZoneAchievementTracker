@@ -117,20 +117,22 @@ f:SetScript("OnEvent", function(self, event)
 	local zoneID = GetCurrentMapAreaID()
 	if not zoneID then return end
 
-	local achievementID = AchievementForZone[zoneID]
-	local _, achievementName = GetAchievementInfo(achievementID or -1)
-	if achievementID and not achievementName then
-		print("|cffff6666[ERROR] Zone Achievement Tracker:|r")
-		print(string.format(">> Bad achievement ID %d for %s in zone %d %s.", achievementID, self.factionName, zoneID, GetRealZoneText()))
-		print("Please report this error so it can be fixed!")
-		achievementID = nil
+	local achievementID, achievementName, completed _ = AchievementForZone[zoneID]
+	if achievementID then
+		_, _, achievementName, _, completed = pcall(GetAchievementInfo, achievementID)
+		if achievementID and not achievementName then
+			print("|cffff6666[ERROR] Zone Achievement Tracker:|r")
+			print(string.format(">> Bad achievement ID %d for %s in zone %d %s.", achievementID, self.factionName, zoneID, GetRealZoneText()))
+			print("Please report this error so it can be fixed!")
+			achievementID = nil
+		end
 	end
 
-	-- print("|cffff6666ZAT:|r", "zoneID:", zoneID, "achievementID:", achievementID)
+	-- print("|cffff6666ZAT:|r", "zoneID", zoneID, "achievementID", achievementID, "achievementName", achievementName, "completed", completed)
 
 	local tracked
 	for _, id in ipairs({ GetTrackedAchievements() }) do
-		if id == achievementID then
+		if id == achievementID and not completed then
 			-- print("|cffff6666ZAT:|r", "Already tracking", achievementID, achievementName)
 			tracked = true
 		elseif ZoneForAchievement[id] then
@@ -139,7 +141,7 @@ f:SetScript("OnEvent", function(self, event)
 		end
 	end
 
-	if achievementID and not tracked then
+	if achievementID and not completed and not tracked then
 		-- print("|cffff6666ZAT:|r", "AddTrackedAchievement", achievementID, achievementName)
 		AddTrackedAchievement(achievementID)
 	end
