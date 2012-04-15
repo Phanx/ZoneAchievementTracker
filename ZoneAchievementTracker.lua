@@ -117,7 +117,7 @@ f:SetScript("OnEvent", function(self, event)
 	local zoneID = GetCurrentMapAreaID()
 	if not zoneID then return end
 
-	local achievementID, achievementName, completed _ = AchievementForZone[zoneID]
+	local achievementID, achievementName, completed, _ = AchievementForZone[zoneID]
 	if achievementID then
 		_, _, achievementName, _, completed = pcall(GetAchievementInfo, achievementID)
 		if achievementID and not achievementName then
@@ -136,7 +136,8 @@ f:SetScript("OnEvent", function(self, event)
 			-- print("|cffff6666ZAT:|r", "Already tracking", achievementID, achievementName)
 			tracked = true
 		elseif ZoneForAchievement[id] then
-			-- print("|cffff6666ZAT:|r", "RemoveTrackedAchievement", achievementID, achievementName)
+			local _, name = GetAchievementInfo(id)
+			-- print("|cffff6666ZAT:|r", "RemoveTrackedAchievement", id, name)
 			RemoveTrackedAchievement(id)
 		end
 	end
@@ -147,4 +148,6 @@ f:SetScript("OnEvent", function(self, event)
 	end
 end)
 
--- ZoneAchievementTracker = f
+-- f.Ach4Zone = AchievementForZone
+-- f.Zone4Ach = ZoneForAchievement
+-- ZAT = f
