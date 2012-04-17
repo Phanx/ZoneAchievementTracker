@@ -7,6 +7,8 @@
 	http://www.curse.com/addons/wow/zoneachievementtracker
 ----------------------------------------------------------------------]]
 
+local ENABLE_DEBUGGING = false
+
 local AchievementForZone = {
 	[16]  = 4896,  -- Arathi Highlands
 	[17]  = 4900,  -- Badlands
@@ -81,7 +83,7 @@ local H = {
 	[607] = 4981,  -- Southern Barrens [H]
 	[81]  = 4980,  -- Stonetalon Mountains [H]
 	[478] = 1272,  -- Terokkar Forest [H]
-	[700] = 5504,  -- Twilight Highlands [H]
+	[700] = 5501,  -- Twilight Highlands [H]
 	[613] = 4982,  -- Vashj'ir [H]
 }
 
@@ -92,62 +94,100 @@ f:RegisterEvent("PLAYER_ENTERING_WORLD")
 f:RegisterEvent("PLAYER_LOGIN")
 f:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 f:SetScript("OnEvent", function(self, event)
-	-- print("|cffff6666ZAT:|r", "OnEvent", event)
+	if ENABLE_DEBUGGING then
+		print("|cffff6666ZAT:|r", "OnEvent", event)
+	end
 	if not ZoneForAchievement then
-		-- print("|cffff6666ZAT:|r", "Initalizing...")
+		if ENABLE_DEBUGGING then
+			print("|cffff6666ZAT:|r", "Initalizing...")
+		end
 		self.factionName = UnitFactionGroup("player")
+
+		local temp
 		if self.factionName == "Alliance" then
-			for zoneID, achievementID in pairs(A) do
-				AchievementForZone[zoneID] = achievementID
-			end
+			temp = A
 		elseif self.factionName == "Horde" then
-			for zoneID, achievementID in pairs(H) do
+			temp = H
+		end
+
+		for zoneID, achievementID in pairs(AchievementForZone) do
+			temp[zoneID] = achievementID
+		end
+
+		wipe(AchievementForZone)
+		for zoneID, achievementID in pairs(temp) do
+			local _, _, name = pcall(GetAchievementInfo, achievementID)
+			if not name then
+				if ENABLE_DEBUGGING then
+					print(achievementID, "is not a valid achievement.")
+				end
+				AchievementForZone[zoneID] = "Invalid"
+			elseif select(2, GetCategoryInfo(GetAchievementCategory(achievementID))) ~= 96 then
+				if ENABLE_DEBUGGING then
+					print(achievementID, "is not a quest achievement.")
+				end
+				AchievementForZone[zoneID] = "Wrong"
+			else
 				AchievementForZone[zoneID] = achievementID
 			end
 		end
-		A, H = nil, nil
 
 		ZoneForAchievement = {}
 		for zoneID, achievementID in pairs(AchievementForZone) do
-			ZoneForAchievement[achievementID] = zoneID
+			if type(achievementID) == "number" then
+				ZoneForAchievement[achievementID] = zoneID
+			end
 		end
-		-- print("|cffff6666ZAT:|r", "Done.")
+
+		A, H, temp = nil, nil, nil
+		if ENABLE_DEBUGGING then
+			print("|cffff6666ZAT:|r", "Done.")
+		end
 	end
 
 	local zoneID = GetCurrentMapAreaID()
 	if not zoneID then return end
 
 	local achievementID, achievementName, completed, _ = AchievementForZone[zoneID]
-	if achievementID then
-		_, _, achievementName, _, completed = pcall(GetAchievementInfo, achievementID)
-		if achievementID and not achievementName then
-			print("|cffff6666[ERROR] Zone Achievement Tracker:|r")
-			print(string.format(">> Bad achievement ID %d for %s in zone %d %s.", achievementID, self.factionName, zoneID, GetRealZoneText()))
-			print("Please report this error so it can be fixed!")
-			achievementID = nil
-		end
+	if type(achievementID) == "number" then
+		_, achievementName, _, completed = GetAchievementInfo(achievementID)
+	elseif achievementID then
+		print("|cffff6666[ERROR] Zone Achievement Tracker:|r")
+		print(string.format(">> %s achievement for %s zone %d %s.", achievementID, self.factionName, zoneID, GetRealZoneText()))
+		print("Please report this error so it can be fixed!")
+		achievementID = nil
 	end
 
-	-- print("|cffff6666ZAT:|r", "zoneID", zoneID, "achievementID", achievementID, "achievementName", achievementName, "completed", completed)
+	if ENABLE_DEBUGGING then
+		print("|cffff6666ZAT:|r", zoneID, GetRealZoneText(), achievementID, achievementName, completed)
+	end
 
 	local tracked
 	for _, id in ipairs({ GetTrackedAchievements() }) do
 		if id == achievementID and not completed then
-			-- print("|cffff6666ZAT:|r", "Already tracking", achievementID, achievementName)
+			if ENABLE_DEBUGGING then
+				print("|cffff6666ZAT:|r", "Already tracking", achievementID, achievementName)
+			end
 			tracked = true
 		elseif ZoneForAchievement[id] then
-			local _, name = GetAchievementInfo(id)
-			-- print("|cffff6666ZAT:|r", "RemoveTrackedAchievement", id, name)
+			if ENABLE_DEBUGGING then
+				local _, name = GetAchievementInfo(id)
+				print("|cffff6666ZAT:|r", "RemoveTrackedAchievement", id, name)
+			end
 			RemoveTrackedAchievement(id)
 		end
 	end
 
 	if achievementID and not completed and not tracked then
-		-- print("|cffff6666ZAT:|r", "AddTrackedAchievement", achievementID, achievementName)
+		if ENABLE_DEBUGGING then
+			print("|cffff6666ZAT:|r", "AddTrackedAchievement", achievementID, achievementName)
+		end
 		AddTrackedAchievement(achievementID)
 	end
 end)
 
--- f.Ach4Zone = AchievementForZone
--- f.Zone4Ach = ZoneForAchievement
--- ZAT = f
+if ENABLE_DEBUGGING then
+	f.Ach4Zone = AchievementForZone
+	f.Zone4Ach = ZoneForAchievement
+	ZAT = f
+end
