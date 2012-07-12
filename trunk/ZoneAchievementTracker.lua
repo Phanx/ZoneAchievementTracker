@@ -1,8 +1,8 @@
 --[[--------------------------------------------------------------------
 	Zone Achievement Tracker
-	Automatically tracks the achievement for completing a certain number of quests in your current zone.
-	Written by Phanx <addons@phanx.net>
-	Copyright © 2012 Phanx. Some rights reserved. See LICENSE.txt for details.
+	Automatically tracks the achievement for completing quests in your current zone.
+	Copyright (c) 2012 Phanx <addons@phanx.net>. All rights reserved.
+	See the accompanying README and LICENSE files for more information.
 	http://www.wowinterface.com/downloads/info20975-ZoneAchievementTracker.html
 	http://www.curse.com/addons/wow/zoneachievementtracker
 ----------------------------------------------------------------------]]
@@ -39,6 +39,10 @@ local AchievementForZone = {
 	[281] = 4940,  -- Winterspring
 	[467] = 1190,  -- Zangarmarsh
 	[496] = 36,    -- Zul'Drak
+	[858] = 6540,  -- Dread Wastes
+	[810] = 6539,  -- Townlong Steppes
+	[811] = 7315,  -- Vale of Eternal Blossoms
+	[807] = 6301,  -- Valley of the Four Winds
 }
 
 local A = {
@@ -63,6 +67,9 @@ local A = {
 	[613] = 4869,  -- Vashj'ir [A]
 	[39]  = 4903,  -- Westfall [A]
 	[40]  = 4898,  -- Wetlands [A]
+	[857] = 6335,  -- Krasarang Wilds [A]
+	[809] = 6537,  -- Kun-Lai Summit [A]
+	[806] = 6300,  -- The Jade Forest [A]
 }
 
 local H = {
@@ -85,6 +92,9 @@ local H = {
 	[478] = 1272,  -- Terokkar Forest [H]
 	[700] = 5501,  -- Twilight Highlands [H]
 	[613] = 4982,  -- Vashj'ir [H]
+	[857] = 6336,  -- Krasarang Wilds [H]
+	[809] = 6538,  -- Kun-Lai Summit [H]
+	[806] = 6534,  -- The Jade Forest [H]
 }
 
 local ZoneForAchievement
