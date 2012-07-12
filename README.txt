@@ -1,8 +1,8 @@
 Zone Achievement Tracker
 ========================
 
-* Written by Phanx <addons@phanx.net>
-* Copyright © 2012 Phanx. Some rights reserved. See LICENSE.txt for details.
+* Copyright (c) 2012 Phanx <addons@phanx.net>. All rights reserved.
+* See the accompanying LICENSE file for more information.
 * http://www.wowinterface.com/downloads/info20975-ZoneAchievementTracker.html
 * http://www.curse.com/addons/wow/zoneachievementtracker
 
@@ -22,26 +22,22 @@ There are no options.
 Localization
 ------------
 
-Compatible with English, Deutsch, Español, Français, Português, Русский,
-한국어, 简体中文, and 正體中文 clients.
-
-Translations are not required.
+Compatible with English, Deutsch, Español (EU), Español (AL), Français,
+Italiano, Português, Русский, 한국어, 简体中文, and 正體中文 clients.
 
 
 Feedback
 --------
 
-Bug Reports:
-Please use the ticket system on either download site to report problems.
+Bugs, errors, or other problems:
+	Submit a bug report ticket on either download page.
 
-Feature Requests:
-This addon is complete, and no feature requests will be considered.
+Feature requests or other suggestions:
+	Submit a feature request ticket system on either download page.
 
-General Questions & Comments:
-Use the comment system on the WoWInterface download page.
+General questions or comments:
+	Post a comment on the WoWInterface download page.
 
-Other:
-If you need to contact me privately, you may do by private message
-on either download site, or by email at <addons@phanx.net>.
-Please note that I do not provide any private support or tutoring,
-and any such messages will likely be deleted without reply.
+If you need to contact me privately for a reason other than those listed
+above, you can send me a private message on either download site, or
+email me at <addons@phanx.net>.

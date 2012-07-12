@@ -1,14 +1,14 @@
-## Interface: 40300
-## Version: 4.3.3.wowi:revision
+## Interface: 50001
+## Version: 5.0.1.wowi:revision-beta
 
 ## Title: Zone Achievement Tracker
-## Notes: Automatically tracks the achievement for completing N quests in your current zone.
+## Notes: Automatically tracks the achievement for completing quests in your current zone.
 
 ## Author: Phanx
 ## X-Email: addons@phanx.net
-## X-Copyright: Copyright © 2012 Phanx
-## X-License: Some rights reserved. See LICENSE.txt for details.
-## X-CompatibleLocales: enUS, deDE, esES, esMX, frFR, koKR, ptBR, ruRU, zhCN, zhTW
+## X-Copyright: Copyright (c) 2012 Phanx. All rights reserved.
+## X-License: See the accompanying LICENSE file for details.
+## X-CompatibleLocales: enUS, deDE, esES, esMX, frFR, itIT, koKR, ptBR, ruRU, zhCN, zhTW
 ## X-Website: http://www.wowinterface.com/downloads/info20975-ZoneAchievementTracker.html
 ## X-Curse-Project-ID: zoneachievementtracker
 ## X-WoWI-ID: 20975
