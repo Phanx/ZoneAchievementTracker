@@ -67,7 +67,7 @@ local A = {
 	[613] = 4869,  -- Vashj'ir [A]
 	[39]  = 4903,  -- Westfall [A]
 	[40]  = 4898,  -- Wetlands [A]
-	[857] = 6335,  -- Krasarang Wilds [A]
+	[857] = 6535,  -- Krasarang Wilds [A]
 	[809] = 6537,  -- Kun-Lai Summit [A]
 	[806] = 6300,  -- The Jade Forest [A]
 }
@@ -92,7 +92,7 @@ local H = {
 	[478] = 1272,  -- Terokkar Forest [H]
 	[700] = 5501,  -- Twilight Highlands [H]
 	[613] = 4982,  -- Vashj'ir [H]
-	[857] = 6336,  -- Krasarang Wilds [H]
+	[857] = 6536,  -- Krasarang Wilds [H]
 	[809] = 6538,  -- Kun-Lai Summit [H]
 	[806] = 6534,  -- The Jade Forest [H]
 }
@@ -108,17 +108,27 @@ f:SetScript("OnEvent", function(self, event)
 		print("|cffff6666ZAT:|r", "OnEvent", event)
 	end
 	if not ZoneForAchievement then
+		local factionGroup = UnitFactionGroup("player")
+
+		local temp
+		if factionGroup == "Alliance" then
+			temp = A
+		elseif factionGroup == "Horde" then
+			temp = H
+		end
+
+		if not temp then
+			if ENABLE_DEBUGGING then
+				print("|cffff6666ZAT:|r", "Unsupported faction:", factionGroup)
+			end
+			return
+		end
+
 		if ENABLE_DEBUGGING then
 			print("|cffff6666ZAT:|r", "Initalizing...")
 		end
-		self.factionName = UnitFactionGroup("player")
 
-		local temp
-		if self.factionName == "Alliance" then
-			temp = A
-		elseif self.factionName == "Horde" then
-			temp = H
-		end
+		self.factionGroup = factionGroup
 
 		for zoneID, achievementID in pairs(AchievementForZone) do
 			temp[zoneID] = achievementID
@@ -163,7 +173,7 @@ f:SetScript("OnEvent", function(self, event)
 		_, achievementName, _, completed = GetAchievementInfo(achievementID)
 	elseif achievementID then
 		print("|cffff6666[ERROR] Zone Achievement Tracker:|r")
-		print(string.format(">> %s achievement for %s zone %d %s.", achievementID, self.factionName, zoneID, GetRealZoneText()))
+		print(string.format(">> %s achievement for %s zone %d %s.", achievementID, self.factionGroup, zoneID, GetRealZoneText()))
 		print("Please report this error so it can be fixed!")
 		achievementID = nil
 	end
