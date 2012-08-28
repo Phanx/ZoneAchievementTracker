@@ -97,6 +97,16 @@ local H = {
 	[806] = 6534,  -- The Jade Forest [H]
 }
 
+local M = {
+	[858] = true,  -- Dread Wastes
+	[857] = true,  -- Krasarang Wilds
+	[809] = true,  -- Kun-Lai Summit
+	[806] = true,  -- The Jade Forest
+	[810] = true,  -- Townlong Steppes
+	[811] = true,  -- Vale of Eternal Blossoms
+	[807] = true,  -- Valley of the Four Winds
+}
+
 local ZoneForAchievement
 
 local f = CreateFrame("Frame")
@@ -108,6 +118,8 @@ f:SetScript("OnEvent", function(self, event)
 		print("|cffff6666ZAT:|r", "OnEvent", event)
 	end
 	if not ZoneForAchievement then
+		ZATDB = ZATDB or {}
+
 		local factionGroup = UnitFactionGroup("player")
 
 		local temp
@@ -182,6 +194,10 @@ f:SetScript("OnEvent", function(self, event)
 		print("|cffff6666ZAT:|r", zoneID, GetRealZoneText(), achievementID, achievementName, completed)
 	end
 
+	if M[zoneID] and ZATDB.ignoreMoP then
+		achievementID = nil
+	end
+
 	local tracked
 	for _, id in ipairs({ GetTrackedAchievements() }) do
 		if id == achievementID and not completed then
@@ -210,4 +226,25 @@ if ENABLE_DEBUGGING then
 	f.Ach4Zone = AchievementForZone
 	f.Zone4Ach = ZoneForAchievement
 	ZAT = f
+end
+
+SLASH_ZONEACHIEVEMENTTRACKER1 = "/zat"
+SlashCmdList.ZONEACHIEVEMENTTRACKER = function()
+	ZATDB.noMoP = not ZATDB.noMoP
+	local LOCALE = GetLocale()
+	if LOCALE == "deDE" then
+		print("|cffffcc00Zone Achievement Tracker:|r", ZATDB.noMoP and "\"Mists of Pandaria\"-Zonen deaktiviert." or "\"Mists of Pandaria\"-Zonen aktiviert.")
+	elseif LOCALE == "esES" or LOCALE == "esMX" then
+		print("|cffffcc00Zone Achievement Tracker:|r", ZATDB.noMoP and "Zonas de Mists of Pandaria desactivada." or "Zonas de Mists of Pandaria activada.")
+	elseif LOCALE == "frFR" then
+		print("|cffffcc00Zone Achievement Tracker:|r", ZATDB.noMoP and "Zones de Mists of Pandaria désactivé." or "Zones de Mists of Pandaria activé.")
+	elseif LOCALE == "itIT" then
+		print("|cffffcc00Zone Achievement Tracker:|r", ZATDB.noMoP and "Zone di Mists of Pandaria disattivata." or "Zone di Mists of Pandaria attivata.")
+	elseif LOCALE == "ptBR" then
+		print("|cffffcc00Zone Achievement Tracker:|r", ZATDB.noMoP and "Zonas de Mists of Pandaria desativada." or "Zonas de Mists of Pandaria ativada.")
+	elseif LOCALE == "ruRU" then
+		print("|cffffcc00Zone Achievement Tracker:|r", ZATDB.noMoP and "Зоны Mists of Pandaria отключена." or "Зоны Mists of Pandaria включена.")
+	else
+		print("|cffffcc00Zone Achievement Tracker:|r", ZATDB.noMoP and "Mists of Pandaria zones disabled." or "Mists of Pandaria zones enabled.")
+	end
 end
