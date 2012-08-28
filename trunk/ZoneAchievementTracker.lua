@@ -7,7 +7,7 @@
 	http://www.curse.com/addons/wow/zoneachievementtracker
 ----------------------------------------------------------------------]]
 
-local ENABLE_DEBUGGING = false
+local ENABLE_DEBUGGING = 1--false
 
 local AchievementForZone = {
 	[16]  = 4896,  -- Arathi Highlands
@@ -194,8 +194,11 @@ f:SetScript("OnEvent", function(self, event)
 		print("|cffff6666ZAT:|r", zoneID, GetRealZoneText(), achievementID, achievementName, completed)
 	end
 
-	if M[zoneID] and ZATDB.ignoreMoP then
+	if M[zoneID] and ZATDB.noMoP then
 		achievementID = nil
+		if ENABLE_DEBUGGING then
+			print("|cffff6666ZAT:|r", "noMoP")
+		end
 	end
 
 	local tracked
@@ -247,4 +250,5 @@ SlashCmdList.ZONEACHIEVEMENTTRACKER = function()
 	else
 		print("|cffffcc00Zone Achievement Tracker:|r", ZATDB.noMoP and "Mists of Pandaria zones disabled." or "Mists of Pandaria zones enabled.")
 	end
+	f:GetScript("OnEvent")(f, "SlashCmdList")
 end
