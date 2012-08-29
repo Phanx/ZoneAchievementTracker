@@ -7,7 +7,7 @@
 	http://www.curse.com/addons/wow/zoneachievementtracker
 ----------------------------------------------------------------------]]
 
-local ENABLE_DEBUGGING = 1--false
+local ENABLE_DEBUGGING = false
 
 local AchievementForZone = {
 	[16]  = 4896,  -- Arathi Highlands
