@@ -51,7 +51,7 @@ local A = {
 	[486] = 33,    -- Borean Tundra [A]
 	[42]  = 4928,  -- Darkshore [A]
 	[488] = 35,    -- Dragonblight [A]
-	[34]  = 4907,  -- Duskwood [A]
+	[34]  = 4903,  -- Duskwood [A]
 	[141] = 4929,  -- Dustwallow Marsh [A]
 	[121] = 4932,  -- Feralas [A]
 	[490] = 37,    -- Grizzly Hills [A]
@@ -182,7 +182,7 @@ f:SetScript("OnEvent", function(self, event)
 
 	local achievementID, achievementName, completed, _ = AchievementForZone[zoneID]
 	if type(achievementID) == "number" then
-		_, achievementName, _, completed = GetAchievementInfo(achievementID)
+		_, achievementName, _, _, _, _, _, _, _, _, _, _, completed = GetAchievementInfo(achievementID)
 	elseif achievementID then
 		print("|cffff6666[ERROR] Zone Achievement Tracker:|r")
 		print(string.format(">> %s achievement for %s zone %d %s.", achievementID, self.factionGroup, zoneID, GetRealZoneText()))
