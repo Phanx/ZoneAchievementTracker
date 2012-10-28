@@ -153,12 +153,10 @@ f:SetScript("OnEvent", function(self, event)
 				if ENABLE_DEBUGGING then
 					print(achievementID, "is not a valid achievement.")
 				end
-				AchievementForZone[zoneID] = "Invalid"
 			elseif select(2, GetCategoryInfo(GetAchievementCategory(achievementID))) ~= 96 then
 				if ENABLE_DEBUGGING then
 					print(achievementID, "is not a quest achievement.")
 				end
-				AchievementForZone[zoneID] = "Wrong"
 			else
 				AchievementForZone[zoneID] = achievementID
 			end
@@ -166,9 +164,7 @@ f:SetScript("OnEvent", function(self, event)
 
 		ZoneForAchievement = {}
 		for zoneID, achievementID in pairs(AchievementForZone) do
-			if type(achievementID) == "number" then
-				ZoneForAchievement[achievementID] = zoneID
-			end
+			ZoneForAchievement[achievementID] = zoneID
 		end
 
 		A, H, temp = nil, nil, nil
