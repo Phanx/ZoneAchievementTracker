@@ -3,6 +3,10 @@
 
 ## Title: Zone Achievement Tracker
 ## Notes: Automatically tracks the achievement for completing quests in your current zone.
+## Notes-deDE: Der Erfolg der abgeschlossenen Quests in der aktuellen Zone automatisch verfolgen.
+## Notes-esES: Sigue automáticamente el logro para misiones completadas en la zona actual.
+## Notes-esMX: Sigue automáticamente el logro para misiones completadas en la zona actual.
+## Notes-ptBR: Segue automaticamente a conquista para missões concluídas na zona atual.
 
 ## Author: Phanx
 ## X-Email: addons@phanx.net
