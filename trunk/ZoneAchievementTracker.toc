@@ -1,9 +1,9 @@
 ## Interface: 50400
-## Version: 5.4.1.wowi:revision
+## Version: 5.4.2.wowi:revision
 
 ## Title: Zone Achievement Tracker
 ## Notes: Automatically tracks the achievement for completing quests in your current zone.
-## Notes-deDE: Der Erfolg der abgeschlossenen Quests in der aktuellen Zone automatisch verfolgen.
+## Notes-deDE: Verfolgt automatisch der Erfolg der abgeschlossenen Quests in der aktuellen Zone.
 ## Notes-esES: Sigue automáticamente el logro para misiones completadas en la zona actual.
 ## Notes-esMX: Sigue automáticamente el logro para misiones completadas en la zona actual.
 ## Notes-ptBR: Segue automaticamente a conquista para missões concluídas na zona atual.
