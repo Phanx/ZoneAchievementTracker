@@ -1,7 +1,7 @@
 Zone Achievement Tracker
 ========================
 
-* Copyright (c) 2012-2013 Phanx <addons@phanx.net>. All rights reserved.
+* Copyright (c) 2012-2014 Phanx <addons@phanx.net>. All rights reserved.
 * See the accompanying LICENSE file for more information.
 * http://www.wowinterface.com/downloads/info20975-ZoneAchievementTracker.html
 * http://www.curse.com/addons/wow/zoneachievementtracker
