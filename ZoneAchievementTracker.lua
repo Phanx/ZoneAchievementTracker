@@ -82,7 +82,7 @@ local A = {
 	-- Draenor
 	[949] = 8923, -- Gorgrond
 	[950] = 8927, -- Nagrand
-	[947] = 8845, -- Shadowmoon Valley -- MISSING MAP ID
+	[947] = 8845, -- Shadowmoon Valley
 	[948] = 8925, -- Spires of Arak
 	[946] = 8920, -- Talador
 }
