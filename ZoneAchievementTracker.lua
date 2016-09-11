@@ -1,10 +1,10 @@
 --[[--------------------------------------------------------------------
 	Zone Achievement Tracker
 	Automatically tracks the achievement for completing quests in your current zone.
-	Copyright (c) 2012-2015 Phanx <addons@phanx.net>. All rights reserved.
-	http://www.wowinterface.com/downloads/info20975-ZoneAchievementTracker.html
-	http://www.curse.com/addons/wow/zoneachievementtracker
+	Copyright (c) 2012-2016 Phanx <addons@phanx.net>. All rights reserved.
 	https://github.com/Phanx/ZoneAchievementTracker
+	https://mods.curse.com/addons/wow/zoneachievementtracker
+	https://www.wowinterface.com/downloads/info20975-ZoneAchievementTracker.html
 ----------------------------------------------------------------------]]
 
 local ENABLE_DEBUGGING = false
@@ -48,6 +48,13 @@ local AchievementForZone = {
 	[811] = 7315,  -- Vale of Eternal Blossoms
 	[807] = 6301,  -- Valley of the Four Winds
 	-- Draenor
+		-- All faction-specific
+	-- Legion
+	[1015] = 10763, -- Aszuna
+	[1024] = 10059, -- Highmountain
+	[1017] = 10790, -- Stormheim
+	[1033] = 11124, -- Suramar
+	[1018] = 10698, -- Val'sharah
 }
 
 local A = {
@@ -139,6 +146,12 @@ local M = {
 	[947] = true,  -- Shadowmoon Valley
 	[948] = true,  -- Spires of Arak
 	[946] = true,  -- Talador
+	-- Legion
+	[1015] = true, -- Aszuna
+	[1024] = true, -- Highmountain
+	[1017] = true, -- Stormheim
+	[1033] = true, -- Suramar
+	[1018] = true, -- Val'sharah
 }
 
 local PLAYER_FACTION

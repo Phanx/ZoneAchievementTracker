@@ -1,3 +1,7 @@
+### Version 7.0.3.0
+
+* Updated for WoW 7.0 and Legion expansion zones
+
 ### Version 6.1.0.15
 
 * Updated for WoW 6.1
