@@ -1,4 +1,4 @@
-## Interface: 70100
+## Interface: 70300
 ## Version: @project-version@
 
 ## Title: Zone Achievement Tracker
@@ -10,7 +10,7 @@
 
 ## Author: Phanx
 ## X-Email: addons@phanx.net
-## X-Copyright: Copyright (c) 2012-2016 Phanx. All rights reserved.
+## X-License: All rights reserved
 ## X-Website: https://github.com/Phanx/ZoneAchievementTracker
 ## X-Curse-Project-ID: 38063
 ## X-WoWI-ID: 20975

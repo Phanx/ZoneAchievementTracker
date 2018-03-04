@@ -1,7 +1,7 @@
 --[[--------------------------------------------------------------------
 	Zone Achievement Tracker
 	Automatically tracks the achievement for completing quests in your current zone.
-	Copyright (c) 2012-2016 Phanx <addons@phanx.net>. All rights reserved.
+	Copyright 2012-2016 Phanx <addons@phanx.net>. All rights reserved.
 	https://github.com/Phanx/ZoneAchievementTracker
 	https://mods.curse.com/addons/wow/zoneachievementtracker
 	https://www.wowinterface.com/downloads/info20975-ZoneAchievementTracker.html

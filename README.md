@@ -6,5 +6,5 @@ Zone Achievement Tracker
 **ES** — Sigue automáticamente el logro para misiones completadas en la zona actual.  
 **PT** — Segue automaticamente a conquista para missões concluídas na zona atual.
 
-* [Download on Curse](https://mods.curse.com/addons/wow/zoneachievementtracker/)
+* [Download on Curse](https://www.curseforge.com/wow/addons/zoneachievementtracker)
 * [Download on WoWInterface](https://www.wowinterface.com/downloads/info20975-ZoneAchievementTracker.html)
