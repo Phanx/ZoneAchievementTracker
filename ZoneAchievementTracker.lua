@@ -10,148 +10,147 @@
 local ENABLE_DEBUGGING = false
 
 local AchievementForZone = {
-	[16]  = 4896,  -- Arathi Highlands
-	[17]  = 4900,  -- Badlands
-	[19]  = 4909,  -- Blasted Lands
-	[29]  = 4901,  -- Burning Steppes
-	[101] = 4930,  -- Desolace
+	[14]  = 4896,  -- Arathi Highlands
+	[15]  = 4900,  -- Badlands
+	[17]  = 4909,  -- Blasted Lands
+	[36]  = 4901,  -- Burning Steppes
+	[66]  = 4930,  -- Desolace
 	[23]  = 4892,  -- Eastern Plaguelands
-	[182] = 4931,  -- Felwood
-	[37]  = 4906,  -- Northern Stranglethorn
-	[28]  = 4910,  -- Searing Gorge
-	[261] = 4934,  -- Silithus
-	[38]  = 4904,  -- Swamp of Sorrows
-	[161] = 4935,  -- Tanaris
-	[673] = 4905,  -- The Cape of Stranglethorn
+	[77]  = 4931,  -- Felwood
+	[50]  = 4906,  -- Northern Stranglethorn
+	[32]  = 4910,  -- Searing Gorge
+	[81]  = 4934,  -- Silithus
+	[51]  = 4904,  -- Swamp of Sorrows
+	[71]  = 4935,  -- Tanaris
+	[510] = 4905,  -- The Cape of Stranglethorn
 	[26]  = 4897,  -- The Hinterlands
 	[61]  = 4938,  -- Thousand Needles
-	[201] = 4939,  -- Un'Goro Crater
+	[78]  = 4939,  -- Un'Goro Crater
 	[22]  = 4893,  -- Western Plaguelands
-	[281] = 4940,  -- Winterspring
+	[83]  = 4940,  -- Winterspring
 	-- Outland
-	[475] = 1193,  -- Blade's Edge Mountains
-	[479] = 1194,  -- Netherstorm
-	[473] = 1195,  -- Shadowmoon Valley
-	[467] = 1190,  -- Zangarmarsh
+	[105] = 1193,  -- Blade's Edge Mountains
+	[109] = 1194,  -- Netherstorm
+	[104] = 1195,  -- Shadowmoon Valley
+	[102] = 1190,  -- Zangarmarsh
 	-- Northrend
-	[492] = 40,    -- Icecrown
-	[493] = 39,    -- Sholazar Basin
-	[495] = 38,    -- The Storm Peaks
-	[496] = 36,    -- Zul'Drak
+	[118] = 40,    -- Icecrown
+	[119] = 39,    -- Sholazar Basin
+	[120] = 38,    -- The Storm Peaks
+	[121] = 36,    -- Zul'Drak
 	-- Cataclysm
-	[640] = 4871,  -- Deepholm
-	[606] = 4870,  -- Mount Hyjal
-	[720] = 4872,  -- Uldum
+	[207] = 4871,  -- Deepholm
+	[198] = 4870,  -- Mount Hyjal
+	[249] = 4872,  -- Uldum
 	-- Pandaria
-	[858] = 6540,  -- Dread Wastes
-	[810] = 6539,  -- Townlong Steppes
-	[811] = 7315,  -- Vale of Eternal Blossoms
-	[807] = 6301,  -- Valley of the Four Winds
+	[422] = 6540,  -- Dread Wastes
+	[388] = 6539,  -- Townlong Steppes
+	[390] = 7315,  -- Vale of Eternal Blossoms
+	[376] = 6301,  -- Valley of the Four Winds
 	-- Draenor
 		-- All faction-specific
 	-- Legion
-	[1015] = 10763, -- Aszuna
-	[1024] = 10059, -- Highmountain
-	[1017] = 10790, -- Stormheim
-	[1033] = 11124, -- Suramar
-	[1018] = 10698, -- Val'sharah
+	[630] = 10763, -- Aszuna
+	[650] = 10059, -- Highmountain
+	[634] = 10790, -- Stormheim
+	[680] = 11124, -- Suramar
+	[641] = 10698, -- Val'sharah
 }
 
 local A = {
-	[43]  = 4925,  -- Ashenvale [A]
-	[42]  = 4928,  -- Darkshore [A]
-	[34]  = 4903,  -- Duskwood [A]
-	[141] = 4929,  -- Dustwallow Marsh [A]
-	[121] = 4932,  -- Feralas [A]
-	[35]  = 4899,  -- Loch Modan [A]
-	[36]  = 4902,  -- Redridge Mountains [A]
-	[607] = 4937,  -- Southern Barrens [A]
-	[81]  = 4936,  -- Stonetalon Mountains [A]
-	[39]  = 4903,  -- Westfall [A]
-	[40]  = 4899,  -- Wetlands [A]
+	[63]  = 4925,  -- Ashenvale
+	[62]  = 4928,  -- Darkshore
+	[47]  = 4903,  -- Duskwood
+	[70]  = 4929,  -- Dustwallow Marsh
+	[69]  = 4932,  -- Feralas
+	[48]  = 4899,  -- Loch Modan
+	[49]  = 4902,  -- Redridge Mountains
+	[199] = 4937,  -- Southern Barrens
+	[65]  = 4936,  -- Stonetalon Mountains
+	[52]  = 4903,  -- Westfall
+	[56]  = 4899,  -- Wetlands
 	-- Outland
-	[476] = 4926,  -- Bloodmyst Isle [A]
-	[465] = 1189,  -- Hellfire Peninsula [A]
-	[477] = 1192,  -- Nagrand [A]
-	[478] = 1191,  -- Terokkar Forest [A]
+	[106] = 4926,  -- Bloodmyst Isle
+	[100] = 1189,  -- Hellfire Peninsula
+	[107] = 1192,  -- Nagrand
+	[108] = 1191,  -- Terokkar Forest
 	-- Northrend
-	[486] = 33,    -- Borean Tundra [A]
-	[488] = 35,    -- Dragonblight [A]
-	[490] = 37,    -- Grizzly Hills [A]
-	[491] = 34,    -- Howling Fjord [A]
+	[114] = 33,    -- Borean Tundra
+	[115] = 35,    -- Dragonblight
+	[116] = 37,    -- Grizzly Hills
+	[117] = 34,    -- Howling Fjord
 	-- Cataclysm
-	[700] = 4873,  -- Twilight Highlands [A]
+	[241] = 4873,  -- Twilight Highlands
 	-- Pandaria
-	[857] = 6535,  -- Krasarang Wilds [A]
-	[809] = 6537,  -- Kun-Lai Summit [A]
-	[806] = 6300,  -- The Jade Forest [A]
-	[613] = 4869,  -- Vashj'ir [A]
+	[418] = 6535,  -- Krasarang Wilds
+	[379] = 6537,  -- Kun-Lai Summit
+	[371] = 6300,  -- The Jade Forest
+	[203] = 4869,  -- Vashj'ir
 	-- Draenor
-	[949] = 8923, -- Gorgrond
-	[950] = 8927, -- Nagrand
-	[947] = 8845, -- Shadowmoon Valley
-	[948] = 8925, -- Spires of Arak
-	[946] = 8920, -- Talador
+	[543] = 8923, -- Gorgrond
+	[550] = 8927, -- Nagrand
+	[539] = 8845, -- Shadowmoon Valley
+	[542] = 8925, -- Spires of Arak
+	[535] = 8920, -- Talador
 }
 
 local H = {
-	[43]  = 4976,  -- Ashenvale [H]
-	[181] = 4927,  -- Azshara [H]
-	[141] = 4978,  -- Dustwallow Marsh [H]
-	[121] = 4979,  -- Feralas [H]
-	[24]  = 4895,  -- Hillsbrad Foothills [H]
-	[11]  = 4933,  -- Northern Barrens [H]
-	[21]  = 4894,  -- Silverpine Forest [H]
-	[607] = 4981,  -- Southern Barrens [H]
-	[81]  = 4980,  -- Stonetalon Mountains [H]
+	[63]  = 4976,  -- Ashenvale
+	[76]  = 4927,  -- Azshara
+	[70]  = 4978,  -- Dustwallow Marsh
+	[69]  = 4979,  -- Feralas
+	[25]  = 4895,  -- Hillsbrad Foothills
+	[10]  = 4933,  -- Northern Barrens
+	[21]  = 4894,  -- Silverpine Forest
+	[199] = 4981,  -- Southern Barrens
+	[65]  = 4980,  -- Stonetalon Mountains
 	-- Outland
-	[463] = 4908,  -- Ghostlands [H]
-	[465] = 1271,  -- Hellfire Peninsula [H]
-	[477] = 1273,  -- Nagrand [H]
-	[478] = 1272,  -- Terokkar Forest [H]
+	[95]  = 4908,  -- Ghostlands
+	[100] = 1271,  -- Hellfire Peninsula
+	[107] = 1273,  -- Nagrand
+	[108] = 1272,  -- Terokkar Forest
 	-- Northrend
-	[486] = 1358,  -- Borean Tundra [H]
-	[488] = 1359,  -- Dragonblight [H]
-	[490] = 1357,  -- Grizzly Hills [H]
-	[491] = 1356,  -- Howling Fjord [H]
+	[114] = 1358,  -- Borean Tundra
+	[115] = 1359,  -- Dragonblight
+	[116] = 1357,  -- Grizzly Hills
+	[117] = 1356,  -- Howling Fjord
 	-- Cataclysm
-	[700] = 5501,  -- Twilight Highlands [H]
+	[241] = 5501,  -- Twilight Highlands
 	-- Pandaria
-	[857] = 6536,  -- Krasarang Wilds [H]
-	[809] = 6538,  -- Kun-Lai Summit [H]
-	[806] = 6534,  -- The Jade Forest [H]
-	[613] = 4982,  -- Vashj'ir [H]
+	[418] = 6536,  -- Krasarang Wilds
+	[379] = 6538,  -- Kun-Lai Summit
+	[371] = 6534,  -- The Jade Forest
+	[203] = 4982,  -- Vashj'ir
 	-- Draenor
-	[941] = 8671, -- Frostfire Ridge
-	-- [941] = 9529, -- Frostfire Ridge (2)
-	[949] = 8924, -- Gorgrond
-	[950] = 8928, -- Nagrand
-	[948] = 8926, -- Spires of Arak
-	[946] = 8919, -- Talador
+	[525] = 8671, -- Frostfire Ridge
+	[543] = 8924, -- Gorgrond
+	[550] = 8928, -- Nagrand
+	[542] = 8926, -- Spires of Arak
+	[535] = 8919, -- Talador
 }
 
 local M = {
 	-- Pandaria
-	[858] = true,  -- Dread Wastes
-	[857] = true,  -- Krasarang Wilds
-	[809] = true,  -- Kun-Lai Summit
-	[806] = true,  -- The Jade Forest
-	[810] = true,  -- Townlong Steppes
-	[811] = true,  -- Vale of Eternal Blossoms
-	[807] = true,  -- Valley of the Four Winds
+	[422] = true,  -- Dread Wastes
+	[418] = true,  -- Krasarang Wilds
+	[379] = true,  -- Kun-Lai Summit
+	[371] = true,  -- The Jade Forest
+	[388] = true,  -- Townlong Steppes
+	[390] = true,  -- Vale of Eternal Blossoms
+	[376] = true,  -- Valley of the Four Winds
 	-- Draenor
-	[941] = true,  -- Frostfire Ridge
-	[949] = true,  -- Gorgrond
-	[950] = true,  -- Nagrand
-	[947] = true,  -- Shadowmoon Valley
-	[948] = true,  -- Spires of Arak
-	[946] = true,  -- Talador
+	[525] = true,  -- Frostfire Ridge
+	[543] = true,  -- Gorgrond
+	[550] = true,  -- Nagrand
+	[539] = true,  -- Shadowmoon Valley
+	[542] = true,  -- Spires of Arak
+	[535] = true,  -- Talador
 	-- Legion
-	[1015] = true, -- Aszuna
-	[1024] = true, -- Highmountain
-	[1017] = true, -- Stormheim
-	[1033] = true, -- Suramar
-	[1018] = true, -- Val'sharah
+	[630] = true, -- Aszuna
+	[650] = true, -- Highmountain
+	[634] = true, -- Stormheim
+	[680] = true, -- Suramar
+	[641] = true, -- Val'sharah
 }
 
 local PLAYER_FACTION
@@ -225,7 +224,7 @@ f:SetScript("OnEvent", function(self, event)
 		init()
 	end
 
-	local zoneID = GetCurrentMapAreaID()
+	local zoneID = C_Map.GetBestMapForUnit("player")
 	if not zoneID then return end
 
 	local achievementID, achievementName, completed, _ = AchievementForZone[zoneID]
