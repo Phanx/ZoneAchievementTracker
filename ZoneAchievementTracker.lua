@@ -28,12 +28,12 @@ local AchievementForZone = {
 	[78]  = 4939,  -- Un'Goro Crater
 	[22]  = 4893,  -- Western Plaguelands
 	[83]  = 4940,  -- Winterspring
-	-- Outland
+	-- The Burning Crusade
 	[105] = 1193,  -- Blade's Edge Mountains
 	[109] = 1194,  -- Netherstorm
 	[104] = 1195,  -- Shadowmoon Valley
 	[102] = 1190,  -- Zangarmarsh
-	-- Northrend
+	-- Wrath of the Lich King
 	[118] = 40,    -- Icecrown
 	[119] = 39,    -- Sholazar Basin
 	[120] = 38,    -- The Storm Peaks
@@ -42,13 +42,13 @@ local AchievementForZone = {
 	[207] = 4871,  -- Deepholm
 	[198] = 4870,  -- Mount Hyjal
 	[249] = 4872,  -- Uldum
-	-- Pandaria
+	-- Mists of Pandaria
 	[422] = 6540,  -- Dread Wastes
 	[388] = 6539,  -- Townlong Steppes
 	[390] = 7315,  -- Vale of Eternal Blossoms
 	[376] = 6301,  -- Valley of the Four Winds
-	-- Draenor
-		-- All faction-specific
+	-- Warlords of Draenor
+		-- All faction-specific, see below
 	-- Legion
 	[630] = 10763, -- Aszuna
 	[650] = 10059, -- Highmountain
@@ -69,29 +69,33 @@ local A = {
 	[65]  = 4936,  -- Stonetalon Mountains
 	[52]  = 4903,  -- Westfall
 	[56]  = 4899,  -- Wetlands
-	-- Outland
+	-- The Burning Crusade
 	[106] = 4926,  -- Bloodmyst Isle
 	[100] = 1189,  -- Hellfire Peninsula
 	[107] = 1192,  -- Nagrand
 	[108] = 1191,  -- Terokkar Forest
-	-- Northrend
+	-- Wrath of the Lich King
 	[114] = 33,    -- Borean Tundra
 	[115] = 35,    -- Dragonblight
 	[116] = 37,    -- Grizzly Hills
 	[117] = 34,    -- Howling Fjord
 	-- Cataclysm
 	[241] = 4873,  -- Twilight Highlands
-	-- Pandaria
+	-- Mists of Pandaria
 	[418] = 6535,  -- Krasarang Wilds
 	[379] = 6537,  -- Kun-Lai Summit
 	[371] = 6300,  -- The Jade Forest
 	[203] = 4869,  -- Vashj'ir
-	-- Draenor
+	-- Warlords of Draenor
 	[543] = 8923, -- Gorgrond
 	[550] = 8927, -- Nagrand
 	[539] = 8845, -- Shadowmoon Valley
 	[542] = 8925, -- Spires of Arak
 	[535] = 8920, -- Talador
+	-- Battle for Azeroth
+	[896] = 12497, -- Drustvar
+	[942] = 12496, -- Stormsong Valley
+	[895] = 12473, -- Tiragarde Sound
 }
 
 local H = {
@@ -104,33 +108,37 @@ local H = {
 	[21]  = 4894,  -- Silverpine Forest
 	[199] = 4981,  -- Southern Barrens
 	[65]  = 4980,  -- Stonetalon Mountains
-	-- Outland
+	-- The Burning Crusade
 	[95]  = 4908,  -- Ghostlands
 	[100] = 1271,  -- Hellfire Peninsula
 	[107] = 1273,  -- Nagrand
 	[108] = 1272,  -- Terokkar Forest
-	-- Northrend
+	-- Wrath of the Lich King
 	[114] = 1358,  -- Borean Tundra
 	[115] = 1359,  -- Dragonblight
 	[116] = 1357,  -- Grizzly Hills
 	[117] = 1356,  -- Howling Fjord
 	-- Cataclysm
 	[241] = 5501,  -- Twilight Highlands
-	-- Pandaria
+	-- Mists of Pandaria
 	[418] = 6536,  -- Krasarang Wilds
 	[379] = 6538,  -- Kun-Lai Summit
 	[371] = 6534,  -- The Jade Forest
 	[203] = 4982,  -- Vashj'ir
-	-- Draenor
+	-- Warlords of Draenor
 	[525] = 8671, -- Frostfire Ridge
 	[543] = 8924, -- Gorgrond
 	[550] = 8928, -- Nagrand
 	[542] = 8926, -- Spires of Arak
 	[535] = 8919, -- Talador
+	-- Battle for Azeroth
+	[863] = 11868, -- Nazmir
+	[864] = 12478, -- Vol'dun
+	[862] = 11861, -- Zuldazar
 }
 
 local M = {
-	-- Pandaria
+	-- Mists of Pandaria
 	[422] = true,  -- Dread Wastes
 	[418] = true,  -- Krasarang Wilds
 	[379] = true,  -- Kun-Lai Summit
@@ -138,7 +146,7 @@ local M = {
 	[388] = true,  -- Townlong Steppes
 	[390] = true,  -- Vale of Eternal Blossoms
 	[376] = true,  -- Valley of the Four Winds
-	-- Draenor
+	-- Warlords of Draenor
 	[525] = true,  -- Frostfire Ridge
 	[543] = true,  -- Gorgrond
 	[550] = true,  -- Nagrand
@@ -151,6 +159,13 @@ local M = {
 	[634] = true, -- Stormheim
 	[680] = true, -- Suramar
 	[641] = true, -- Val'sharah
+	-- Battle for Azeroth
+	[896] = true, -- Drustvar
+	[863] = true, -- Nazmir
+	[942] = true, -- Stormsong Valley
+	[895] = true, -- Tiragarde Sound
+	[864] = true, -- Vol'dun
+	[862] = true, -- Zuldazar
 }
 
 local PLAYER_FACTION
