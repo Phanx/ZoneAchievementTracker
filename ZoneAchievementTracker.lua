@@ -242,7 +242,18 @@ f:SetScript("OnEvent", function(self, event)
 	local mapID = C_Map.GetBestMapForUnit("player")
 	if not mapID then return end
 
-	local achievementID, achievementName, completed, _ = AchievementForZone[zoneID]
+	local achievementID = AchievementForZone[mapID]
+	if not achievementID then
+		-- Check parents in case we're in a cave.
+		local mapInfo = C_Map.GetMapInfo(mapID)
+		while mapInfo and mapInfo.parentMapID and not achievementID do
+			mapID = mapInfo.parentMapID
+			mapInfo = C_Map.GetMapInfo(mapID)
+			achievementID = AchievementForZone[mapID]
+		end
+	end
+
+	local achievementName, completed, _
 	if type(achievementID) == "number" then
 		_, achievementName, _, _, _, _, _, _, _, _, _, _, completed = GetAchievementInfo(achievementID)
 	elseif achievementID then
