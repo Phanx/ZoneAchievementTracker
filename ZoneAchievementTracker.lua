@@ -196,12 +196,12 @@ local function init()
 
 	PLAYER_FACTION = factionGroup
 
-	for zoneID, achievementID in pairs(AchievementForZone) do
-		temp[zoneID] = achievementID
+	for mapID, achievementID in pairs(AchievementForZone) do
+		temp[mapID] = achievementID
 	end
 
 	wipe(AchievementForZone)
-	for zoneID, achievementID in pairs(temp) do
+	for mapID, achievementID in pairs(temp) do
 		local _, _, name = pcall(GetAchievementInfo, achievementID)
 		if not name then
 			if ENABLE_DEBUGGING then
@@ -212,13 +212,13 @@ local function init()
 				print(achievementID, "is not a quest achievement.")
 			end
 		else
-			AchievementForZone[zoneID] = achievementID
+			AchievementForZone[mapID] = achievementID
 		end
 	end
 
 	ZoneForAchievement = {}
-	for zoneID, achievementID in pairs(AchievementForZone) do
-		ZoneForAchievement[achievementID] = zoneID
+	for mapID, achievementID in pairs(AchievementForZone) do
+		ZoneForAchievement[achievementID] = mapID
 	end
 
 	A, H, temp = nil, nil, nil
@@ -239,24 +239,24 @@ f:SetScript("OnEvent", function(self, event)
 		init()
 	end
 
-	local zoneID = C_Map.GetBestMapForUnit("player")
-	if not zoneID then return end
+	local mapID = C_Map.GetBestMapForUnit("player")
+	if not mapID then return end
 
 	local achievementID, achievementName, completed, _ = AchievementForZone[zoneID]
 	if type(achievementID) == "number" then
 		_, achievementName, _, _, _, _, _, _, _, _, _, _, completed = GetAchievementInfo(achievementID)
 	elseif achievementID then
 		print("|cffff6666[ERROR] Zone Achievement Tracker:|r")
-		print(string.format(">> %s achievement for %s zone %d %s.", achievementID, PLAYER_FACTION, zoneID, GetRealZoneText()))
+		print(string.format(">> %s achievement for %s zone %d %s.", achievementID, PLAYER_FACTION, mapID, GetRealZoneText()))
 		print("Please report this error so it can be fixed!")
 		achievementID = nil
 	end
 
 	if ENABLE_DEBUGGING then
-		print("|cffff6666ZAT:|r", zoneID, GetRealZoneText(), achievementID, achievementName, completed)
+		print("|cffff6666ZAT:|r", mapID, GetRealZoneText(), achievementID, achievementName, completed)
 	end
 
-	if M[zoneID] and ZATDB.noMoP then
+	if M[mapID] and ZATDB.noMoP then
 		achievementID = nil
 		if ENABLE_DEBUGGING then
 			print("|cffff6666ZAT:|r", "noMoP")
