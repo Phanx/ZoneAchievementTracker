@@ -1,3 +1,8 @@
+### Version 8.0.0.0
+
+* Updated for WoW 8.0
+* Added data for Battle for Azeroth expansion zones
+
 ### Version 7.3.5.0
 
 * Updated for WoW 7.3
